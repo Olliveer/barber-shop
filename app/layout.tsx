@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
+import { Card, CardContent } from "@/components/ui/card";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+
+        <Toaster />
+
+        <footer>
+          <Card className="rounded-none">
+            <CardContent className="px-5 py-6">
+              <p className="text-sm text-gray-400">
+                Criado por <strong>USER_NAME</strong>
+              </p>
+            </CardContent>
+          </Card>
+        </footer>
+      </body>
     </html>
   );
 }

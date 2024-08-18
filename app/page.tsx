@@ -3,7 +3,6 @@ import BookingItem from "@/components/booking-item";
 import Header from "@/components/header";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { db } from "@/lib/prisma";
 import { PlusIcon, SearchIcon } from "lucide-react";
@@ -108,16 +107,6 @@ export default async function Home() {
           ))}
         </div>
       </div>
-
-      <footer>
-        <Card className="rounded-none">
-          <CardContent className="px-5 py-6">
-            <p className="text-sm text-gray-400">
-              Criado por <strong>USER_NAME</strong>
-            </p>
-          </CardContent>
-        </Card>
-      </footer>
     </main>
   );
 }
