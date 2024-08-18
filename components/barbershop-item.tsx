@@ -20,6 +20,7 @@ function BarberShopItem({ barbershop }: BarberShopItemProps) {
             alt={barbershop.name}
             fill
             className="rounded-2xl object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
 
           <Badge

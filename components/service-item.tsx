@@ -16,7 +16,9 @@ function ServiceItem({ service }: ServiceItemProps) {
             src={service.imageUrl}
             alt={service.name}
             fill
+            priority
             className="rounded-lg object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
 
