@@ -4,7 +4,7 @@ import SidebarButton from "./sidebar-button";
 
 function Header() {
   return (
-    <Card>
+    <Card className="rounded-none">
       <CardContent className="flex flex-row items-center justify-between p-5">
         <Image
           src="/barber-placeholder.svg"

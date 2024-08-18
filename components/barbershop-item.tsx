@@ -24,11 +24,11 @@ function BarberShopItem({ barbershop }: BarberShopItemProps) {
           />
 
           <Badge
-            className="absolute left-2 top-2 gap-1 bg-white/70"
+            className="absolute left-2 top-2 gap-1 bg-white"
             variant={"secondary"}
           >
-            <StarIcon size={12} className="text-primar fill-primary" />
-            <p className="text-xs font-semibold">5,0</p>
+            <StarIcon size={12} className="fill-primary text-primary" />
+            <p className="text-xs font-semibold dark:text-black">5,0</p>
           </Badge>
         </div>
 

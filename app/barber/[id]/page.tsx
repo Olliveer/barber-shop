@@ -36,7 +36,7 @@ async function BarberShopPage({ params }: { params: { id: string } }) {
         <Button
           size={"icon"}
           variant={"secondary"}
-          className="absolute left-2 top-2 bg-white/80"
+          className="absolute left-2 top-2 bg-white dark:bg-black"
           asChild
         >
           <Link href="/">

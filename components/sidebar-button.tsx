@@ -12,6 +12,7 @@ import { Avatar, AvatarImage } from "./ui/avatar";
 import Link from "next/link";
 import { quickSearchOptions } from "@/lib/constants";
 import Image from "next/image";
+import { ModeToggle } from "./dark-theme-toggle";
 
 type Props = {
   isAbsolute?: boolean;
@@ -26,7 +27,7 @@ function SidebarButton({ isAbsolute = false }: Props) {
           variant={"outline"}
           className={`${
             isAbsolute ? "absolute right-2 top-2" : ""
-          } bg-white/80`}
+          } bg-white dark:bg-black`}
         >
           <MenuIcon />
         </Button>
@@ -85,6 +86,10 @@ function SidebarButton({ isAbsolute = false }: Props) {
             <LogOutIcon size={18} />
             Logout
           </Button>
+        </div>
+
+        <div className="bottom-0 flex items-center justify-end">
+          <ModeToggle />
         </div>
       </SheetContent>
     </Sheet>
