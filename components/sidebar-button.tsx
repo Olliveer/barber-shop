@@ -1,4 +1,4 @@
-import { CalendarIcon, HomeIcon, LogOutIcon, MenuIcon } from "lucide-react";
+import { CalendarIcon, HomeIcon, MenuIcon } from "lucide-react";
 import { Button } from "./ui/button";
 import {
   Sheet,
@@ -8,11 +8,14 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "./ui/sheet";
-import { Avatar, AvatarImage } from "./ui/avatar";
+
 import Link from "next/link";
 import { quickSearchOptions } from "@/lib/constants";
 import Image from "next/image";
 import { ModeToggle } from "./dark-theme-toggle";
+
+import UserInfo from "./user-information";
+import { SignOut } from "./signout-button";
 
 type Props = {
   isAbsolute?: boolean;
@@ -37,16 +40,7 @@ function SidebarButton({ isAbsolute = false }: Props) {
           <SheetTitle className="text-left">Menu</SheetTitle>
         </SheetHeader>
 
-        <div className="flex items-center gap-3 border-b border-solid py-5">
-          <Avatar>
-            <AvatarImage src="/avatar-placeholder.png" alt="User" />
-          </Avatar>
-
-          <div className="">
-            <p className="font-bold">John Doe</p>
-            <p className="text-xs">john@mail.com</p>
-          </div>
-        </div>
+        <UserInfo />
 
         <div className="flex flex-col gap-2 border-b border-solid p-5">
           <SheetClose asChild>
@@ -82,10 +76,7 @@ function SidebarButton({ isAbsolute = false }: Props) {
         </div>
 
         <div className="flex flex-col gap-2 p-5">
-          <Button className="justify-start gap-2" variant={"ghost"}>
-            <LogOutIcon size={18} />
-            Logout
-          </Button>
+          <SignOut />
         </div>
 
         <div className="bottom-0 flex items-center justify-end">

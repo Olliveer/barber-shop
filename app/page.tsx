@@ -1,3 +1,4 @@
+import { auth } from "@/auth";
 import BarberShopItem from "@/components/barbershop-item";
 import BookingItem from "@/components/booking-item";
 import Header from "@/components/header";
@@ -9,6 +10,10 @@ import { PlusIcon, SearchIcon } from "lucide-react";
 import Image from "next/image";
 
 export default async function Home() {
+  const session = await auth();
+
+  if (!session?.user) return null;
+
   const barbershops = await db.barberShop.findMany();
 
   const popularBabershops = await db.barberShop.findMany({
@@ -23,7 +28,7 @@ export default async function Home() {
       <Header />
 
       <div className="p-5">
-        <h2 className="text-xl font-bold">Olá, nome_user</h2>
+        <h2 className="text-xl font-bold">Olá, {session.user.name}</h2>
         <p>
           {Intl.DateTimeFormat("pt-BR", {
             dateStyle: "full",
