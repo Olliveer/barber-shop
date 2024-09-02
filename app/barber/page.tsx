@@ -12,10 +12,30 @@ type BarberShopsProps = {
 async function BarberShops({ searchParams }: BarberShopsProps) {
   const barberShops = await db.barberShop.findMany({
     where: {
-      name: {
-        contains: searchParams.search,
-        mode: "insensitive",
-      },
+      OR: [
+        {
+          services: {
+            some: {
+              name: {
+                contains: searchParams.search,
+                mode: "insensitive",
+              },
+            },
+          },
+        },
+        {
+          name: {
+            contains: searchParams.search,
+            mode: "insensitive",
+          },
+        },
+        {
+          address: {
+            contains: searchParams.search,
+            mode: "insensitive",
+          },
+        },
+      ],
     },
   });
 
