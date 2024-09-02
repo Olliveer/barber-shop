@@ -2,11 +2,11 @@ import { auth } from "@/auth";
 import BarberShopItem from "@/components/barbershop-item";
 import BookingItem from "@/components/booking-item";
 import Header from "@/components/header";
+import Search from "@/components/search";
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { db } from "@/lib/prisma";
-import { PlusIcon, SearchIcon } from "lucide-react";
+import { PlusIcon } from "lucide-react";
 import Image from "next/image";
 
 export default async function Home() {
@@ -35,11 +35,8 @@ export default async function Home() {
           }).format(new Date())}
         </p>
 
-        <div className="mt-6 flex items-center gap-2">
-          <Input placeholder="Faça uma busca" />
-          <Button variant="outline">
-            <SearchIcon />
-          </Button>
+        <div className="mt-6">
+          <Search />
         </div>
 
         {/* TODO: add right icons */}

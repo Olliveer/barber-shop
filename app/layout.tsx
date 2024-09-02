@@ -26,19 +26,20 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className="flex h-full flex-col">
+            <div className="flex-1">{children}</div>
+            <footer>
+              <Card className="rounded-none">
+                <CardContent className="px-5 py-6">
+                  <p className="text-sm text-gray-400">
+                    Criado por <strong>USER_NAME</strong>
+                  </p>
+                </CardContent>
+              </Card>
+            </footer>
+          </div>
 
           <Toaster />
-
-          <footer>
-            <Card className="rounded-none">
-              <CardContent className="px-5 py-6">
-                <p className="text-sm text-gray-400">
-                  Criado por <strong>USER_NAME</strong>
-                </p>
-              </CardContent>
-            </Card>
-          </footer>
         </ThemeProvider>
       </body>
     </html>
